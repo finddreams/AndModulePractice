@@ -39,7 +39,10 @@ public class HomeActivity extends BaseActivity {
     private Fragment findFragment;
     private Fragment shoppingcartFragment;
     private Fragment userFragment;
-
+    public static final String TAG_FRAGMENT_HOME="home";
+    public static final String TAG_FRAGMENT_FIND="find";
+    public static final String TAG_FRAGMENT_CART="cart";
+    public static final String TAG_FRAGMENT_USER="user";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,38 +74,38 @@ public class HomeActivity extends BaseActivity {
         FragmentTransaction ft = supportFragmentManager.beginTransaction();
         hideAllFragment(ft);
         if (checkedId == R.id.rb_home) {
-            mHomeFragment = supportFragmentManager.findFragmentByTag("home");
+            mHomeFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_HOME);
             if (mHomeFragment == null) {
                 mHomeFragment = RouteUtils.getHomeFragment();
-                if (userFragment != null) {
-                    ft.add(R.id.ll_main, mHomeFragment, "home");
+                if (mHomeFragment != null) {
+                    ft.add(R.id.ll_main, mHomeFragment, TAG_FRAGMENT_HOME);
                 }
             }
             curFragment = mHomeFragment;
         } else if (checkedId == R.id.rb_find) {
-            findFragment = supportFragmentManager.findFragmentByTag("find");
+            findFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_FIND);
             if (findFragment == null) {
                 findFragment = RouteUtils.getFindFragment();
                 if (findFragment != null) {
-                    ft.add(R.id.ll_main, findFragment, "find");
+                    ft.add(R.id.ll_main, findFragment, TAG_FRAGMENT_FIND);
                 }
             }
             curFragment = findFragment;
         } else if (checkedId == R.id.rb_shoppingcart) {
-            shoppingcartFragment = supportFragmentManager.findFragmentByTag("shoppingcart");
+            shoppingcartFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_CART);
             if (shoppingcartFragment == null) {
                 shoppingcartFragment = RouteUtils.getShoppingCartFragment();
                 if (shoppingcartFragment != null) {
-                    ft.add(R.id.ll_main, shoppingcartFragment, "shoppingcart");
+                    ft.add(R.id.ll_main, shoppingcartFragment, TAG_FRAGMENT_CART);
                 }
             }
             curFragment = shoppingcartFragment;
         } else if (checkedId == R.id.rb_user) {
-            userFragment = supportFragmentManager.findFragmentByTag("user");
+            userFragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_USER);
             if (userFragment == null) {
                 userFragment = RouteUtils.getUserFragment();
                 if (userFragment != null) {
-                    ft.add(R.id.ll_main, userFragment, "user");
+                    ft.add(R.id.ll_main, userFragment, TAG_FRAGMENT_USER);
                 }
             }
             curFragment = userFragment;
@@ -114,19 +117,19 @@ public class HomeActivity extends BaseActivity {
 
     private void hideAllFragment(FragmentTransaction ft) {
         Fragment fragment;
-        fragment = supportFragmentManager.findFragmentByTag("home");
+        fragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_HOME);
         if (fragment != null) {
             ft.hide(fragment);
         }
-        fragment = supportFragmentManager.findFragmentByTag("find");
+        fragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_FIND);
         if (fragment != null) {
             ft.hide(fragment);
         }
-        fragment = supportFragmentManager.findFragmentByTag("shoppingcart");
+        fragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_CART);
         if (fragment != null) {
             ft.hide(fragment);
         }
-        fragment = supportFragmentManager.findFragmentByTag("user");
+        fragment = supportFragmentManager.findFragmentByTag(TAG_FRAGMENT_USER);
         if (fragment != null) {
             ft.hide(fragment);
         }

@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
  */
 
 public class RouteUtils {
+    public static final String GoodDetail_Activity_Main = "/gooddetail/main";
     public static final String Home_Fragment_Main = "/home/main";
     public static final String Find_Fragment_Main = "/find/main";
     public static final String User_Fragment_Main = "/user/main";
@@ -30,5 +31,8 @@ public class RouteUtils {
     public static Fragment getShoppingCartFragment() {
         Fragment fragment = (Fragment) ARouter.getInstance().build(ShoppingCart_Fragment_Main).navigation();
         return fragment;
+    }
+    public static void startGoodDetailActivity(String goodId) {
+        ARouter.getInstance().build(GoodDetail_Activity_Main).withString("goodName",goodId).navigation();
     }
 }
