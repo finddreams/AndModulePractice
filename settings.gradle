@@ -1,0 +1,6 @@
+include ':app', ':module_base', ':lib_share', ':lib_pay'
+include ':module_home'
+include ':module_user'
+include ':module_find'
+include ':module_shoppingcart'
+include ':module_gooddetail'

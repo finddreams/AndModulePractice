@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    buildToolsVersion = localBuildToolsVersion
+    compileSdkVersion = 26
+    minSdkVersion = 17
+    targetSdkVersion = 27
+    javaVersion = JavaVersion.VERSION_1_8
+    // App dependencies version
+    supportLibraryVersion = "25.3.1"
+    gsonVersion = "2.8.0"
+    //需检查升级版本
+    arouterVersion = "1.2.2"
+    arouterProcessorVersion = "1.1.3"
+}
