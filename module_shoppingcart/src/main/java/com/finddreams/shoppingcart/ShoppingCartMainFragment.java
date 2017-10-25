@@ -13,6 +13,7 @@ import com.finddreams.module_base.base.BaseFragment;
 import com.finddreams.module_base.event.LoginStateEvent;
 import com.finddreams.module_base.utils.RouteUtils;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -34,15 +35,15 @@ public class ShoppingCartMainFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.shoppingcart_fragment_main, null);
         initView(rootView);
+        EventBus.getDefault().register(this);
         return rootView;
     }
 
     private void initView(View rootView) {
         tvGoodname = rootView.findViewById(R.id.tv_goodname);
-        tvGoodname = rootView.findViewById(R.id.bt_goto_gooddetail);
         tv_loginstate = rootView.findViewById(R.id.tv_loginstate);
         btGotoGooddetail = rootView.findViewById(R.id.bt_goto_gooddetail);
-        final String goodName = btGotoGooddetail.getText().toString();
+        final String goodName = tvGoodname.getText().toString();
         btGotoGooddetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
