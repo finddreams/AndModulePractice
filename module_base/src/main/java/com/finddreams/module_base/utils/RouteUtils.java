@@ -14,7 +14,10 @@ public class RouteUtils {
     public static final String Home_Fragment_Main = "/home/main";
     public static final String Find_Fragment_Main = "/find/main";
     public static final String User_Fragment_Main = "/user/main";
+    public static final String User_Activity_Login = "/user/login";
     public static final String ShoppingCart_Fragment_Main = "/shoppingcart/main";
+
+    public static final String Service_User = "/user/service";
 
     public static Fragment getFindFragment() {
         Fragment fragment = (Fragment) ARouter.getInstance().build(Find_Fragment_Main).navigation();
@@ -32,7 +35,15 @@ public class RouteUtils {
         Fragment fragment = (Fragment) ARouter.getInstance().build(ShoppingCart_Fragment_Main).navigation();
         return fragment;
     }
-    public static void startGoodDetailActivity(String goodId) {
-        ARouter.getInstance().build(GoodDetail_Activity_Main).withString("goodName",goodId).navigation();
+
+    /**
+     * 跳转到商品详情的页面
+     * @param goodName
+     */
+    public static void startGoodDetailActivity(String goodName) {
+        ARouter.getInstance().build(GoodDetail_Activity_Main).withString("goodName",goodName).navigation();
+    }
+    public static void startLoginActivity() {
+        ARouter.getInstance().build(User_Activity_Login).navigation();
     }
 }

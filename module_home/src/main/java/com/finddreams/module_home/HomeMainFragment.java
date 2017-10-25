@@ -19,6 +19,12 @@ public class HomeMainFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.home_fragment_main, null);
+
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

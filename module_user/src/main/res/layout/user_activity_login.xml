@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_tab_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_good_name"
+    <Button
+        android:id="@+id/bt_login_success"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="商品详情" />
+        android:text="登录成功" />
 
-    <TextView
-        android:id="@+id/tv_address"
+    <Button
+        android:id="@+id/bt_login_fail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_good_name"
+        android:layout_below="@id/bt_login_success"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="地址" />
+        android:text="登录失败" />
+
 </RelativeLayout>

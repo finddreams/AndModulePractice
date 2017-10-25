@@ -28,7 +28,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile project(':module_home')
     compile project(':module_find')
-    compile project(':module_user')
+    if (isNeedUserModule.toBoolean()) {
+        compile project(':module_user')
+    }
     compile project(':module_gooddetail')
     compile project(':module_shoppingcart')
 

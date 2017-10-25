@@ -2,11 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_usercenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="用户中心"
-        android:layout_centerInParent="true" />
+        android:layout_centerHorizontal="true"
+        android:text="用户中心" />
+    <TextView
+        android:id="@+id/tv_login_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_usercenter"
+        android:text="未登录" />
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_state"
+        android:layout_centerHorizontal="true"
+        android:text="登录" />
 </RelativeLayout>

@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:paddingTop="5dp"
-            android:drawableTop="@drawable/home_tab_find"
+            android:drawableTop="@drawable/home_tab_shoppingcart"
 
             android:gravity="center_horizontal"
             android:textSize="11dp" />
