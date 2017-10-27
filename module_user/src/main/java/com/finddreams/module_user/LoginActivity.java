@@ -37,6 +37,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
+//        switch (view.getId()){
+//            case R.id.bt_login_success:
+//                break;
+//            case R.id.bt_login_fail:
+//                break;
+//        }
         int id = view.getId();
         if (id == R.id.bt_login_success) {
             EventBus.getDefault().post(new LoginStateEvent(true));
